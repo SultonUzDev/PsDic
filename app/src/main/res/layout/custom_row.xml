@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:background="?selectableItemBackground">
+
+    <LinearLayout
+        android:id="@+id/roootLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:orientation="vertical"
+        android:padding="2dp"
+        android:weightSum="2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSpeak"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+
+            android:id="@+id/eng_words"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="arial"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:text="ss"
+            android:textColor="#000"
+            android:textSize="20sp"
+
+            app:fontFamily="@font/tahoma" />
+
+        <TextView
+            android:id="@+id/uzb_words"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/corbel"
+            android:gravity="center_vertical"
+            android:paddingStart="8dp"
+            android:text="ss"
+            android:textColor="#201919"
+            android:textSize="20sp"
+
+            app:fontFamily="@font/corbel" />
+
+
+    </LinearLayout>
+
+
+    <ImageButton
+        android:id="@+id/buttonSpeak"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="2dp"
+        android:background="?selectableItemBackground"
+
+        android:src="@drawable/ic_volume_up_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
