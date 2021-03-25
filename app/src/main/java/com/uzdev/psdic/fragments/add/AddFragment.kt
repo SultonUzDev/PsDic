@@ -45,7 +45,7 @@ class AddFragment : Fragment(R.layout.fragment_add) {
             if (engName.isEmpty()) {
                 binding.engNameAt.error = "Fill fields please"
             } else {
-                binding.uzbNameAt.error = "Bu maydoni to'ldiring"
+                binding.uzbNameAt.error = "Bu maydonni to'ldiring"
             }
 
         } else {
