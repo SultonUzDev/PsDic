@@ -13,6 +13,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.uzdev.psdic.R
+import com.uzdev.psdic.databinding.FragmentAddBinding
 import com.uzdev.psdic.model.Word
 import com.uzdev.psdic.viewmodel.WordViewModel
 
@@ -20,33 +21,31 @@ import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
 
-class AddFragment : Fragment() {
+class AddFragment : Fragment(R.layout.fragment_add) {
     private lateinit var mWordViewModel: WordViewModel
+    private lateinit var binding: FragmentAddBinding
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        val view = inflater.inflate(R.layout.fragment_add, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding = FragmentAddBinding.bind(view)
         mWordViewModel = ViewModelProvider(this).get(WordViewModel::class.java)
 
-        view.add_btn_at.setOnClickListener {
+        binding.addBtnAt.setOnClickListener {
             insertDataToDatabase()
         }
 
-        return view
     }
 
+
     private fun insertDataToDatabase() {
-        val engName = engName_at.text.toString()
-        val uzbName = uzbName_at.text.toString()
+        val engName = binding.engNameAt.text.toString()
+        val uzbName = binding.uzbNameAt.text.toString()
 
         if (engName.isEmpty() || uzbName.isEmpty()) {
             if (engName.isEmpty()) {
-                engName_at.error = "Fill fields please"
+                binding.engNameAt.error = "Fill fields please"
             } else {
-                uzbName_at.error = "Bu maydoni to'ldiring"
+                binding.uzbNameAt.error = "Bu maydoni to'ldiring"
             }
 
         } else {
