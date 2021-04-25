@@ -1,56 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
 
-    tools:context=".fragments.update.UpdateFragment">
+    tools:context=".fragments.add.AddFragment">
 
-
-    <EditText
-        android:id="@+id/update_engName_at"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="English"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent"
+        android:background="#eeebdd"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp">
 
-    <EditText
-        android:id="@+id/update_uzbName_at"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:ems="10"
-        android:hint="O'zbekcha"
+        <EditText
+            android:id="@+id/update_engName_at"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_style_back"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:hint="English"
+            android:inputType="textPersonName"
+            android:paddingStart="8dp" />
 
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_engName_at" />
+        <EditText
+            android:id="@+id/update_uzbName_at"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/edittext_style_back"
+            android:clickable="true"
+            android:focusableInTouchMode="true"
+            android:hint="O'zbekcha"
+            android:inputType="textPersonName"
+            android:paddingStart="8dp" />
 
 
-    <Button
-        android:id="@+id/update_btn_at"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="56dp"
-        android:textColor="#fff"
-        android:background="@drawable/btn_style_back"
-        android:paddingTop="8dp"
-        android:paddingBottom="8dp"
-        android:text="Edit word"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/update_uzbName_at" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/update_btn_at"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="56dp"
+            android:backgroundTint="#02475e"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:text="Edit word"
+            android:textColor="#fff"
+            app:cornerRadius="4dp"
+            app:elevation="3dp" />
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

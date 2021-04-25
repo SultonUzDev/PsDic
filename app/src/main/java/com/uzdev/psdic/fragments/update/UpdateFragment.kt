@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.uzdev.psdic.R
+import com.uzdev.psdic.databinding.FragmentUpdateBinding
 import com.uzdev.psdic.model.Word
 import com.uzdev.psdic.viewmodel.WordViewModel
 import kotlinx.android.synthetic.main.fragment_update.*
@@ -19,34 +20,42 @@ import kotlinx.android.synthetic.main.fragment_update.view.*
 
 class UpdateFragment : Fragment() {
     private val args by navArgs<UpdateFragmentArgs>()
-
+    private var _binding: FragmentUpdateBinding? = null
+    private val binding get() = _binding!!
     private lateinit var mWordViewModel: WordViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_update, container, false)
-        mWordViewModel = ViewModelProvider(this).get(WordViewModel::class.java)
-        view.update_engName_at.setText(args.currentWord.engName)
-        view.update_uzbName_at.setText(args.currentWord.uzbName)
+    ): View {
 
-        view.update_btn_at.setOnClickListener {
-            updateItem()
-        }
-
+        _binding = FragmentUpdateBinding.inflate(inflater, container, false)
+        val view = binding.root
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+        mWordViewModel = ViewModelProvider(this).get(WordViewModel::class.java)
+      binding.updateEngNameAt.setText(args.currentWord.engName)
+      binding.updateUzbNameAt.setText(args.currentWord.uzbName)
+
+      binding.updateBtnAt.setOnClickListener {
+            updateItem()
+        }
+
+
+    }
     private fun updateItem() {
-        val engName = update_engName_at.text.toString()
-        val uzbName = update_uzbName_at.text.toString()
+        val engName =  binding.updateEngNameAt.text.toString()
+        val uzbName = binding.updateUzbNameAt.text.toString()
 
         if (engName.isEmpty() || uzbName.isEmpty()) {
             if (engName.isEmpty()) {
-                update_engName_at.error = "Fill fields please"
+                binding.updateEngNameAt.error = "Fill fields please"
             } else {
-                update_uzbName_at.error = "Bu maydoni to'ldiring"
+                binding.updateUzbNameAt.error = "Bu maydonni to'ldiring"
             }
 
         } else {
@@ -67,5 +76,8 @@ class UpdateFragment : Fragment() {
             imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
     }
-
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

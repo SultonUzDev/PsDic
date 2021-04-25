@@ -2,7 +2,6 @@ package com.uzdev.psdic.fragments.add
 
 import android.content.Context
 import android.os.Bundle
-import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,6 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.uzdev.psdic.R
 import com.uzdev.psdic.databinding.FragmentAddBinding
+import com.uzdev.psdic.databinding.FragmentUpdateBinding
 import com.uzdev.psdic.model.Word
 import com.uzdev.psdic.viewmodel.WordViewModel
 
@@ -22,18 +22,27 @@ import kotlinx.android.synthetic.main.fragment_add.view.*
 
 
 class AddFragment : Fragment(R.layout.fragment_add) {
+
     private lateinit var mWordViewModel: WordViewModel
-    private lateinit var binding: FragmentAddBinding
+    private var _binding: FragmentAddBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+
+        _binding = FragmentAddBinding.inflate(inflater, container, false)
+        mWordViewModel = ViewModelProvider(this).get(WordViewModel::class.java)
+        return binding.root
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentAddBinding.bind(view)
-        mWordViewModel = ViewModelProvider(this).get(WordViewModel::class.java)
 
         binding.addBtnAt.setOnClickListener {
             insertDataToDatabase()
         }
-
     }
 
 

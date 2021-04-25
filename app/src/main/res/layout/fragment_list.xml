@@ -22,12 +22,11 @@
         android:id="@+id/floatingActionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
+        android:backgroundTint="@color/colorPrimary"
         android:clickable="true"
         android:focusable="true"
-        android:scaleType="centerCrop"
-        android:layout_gravity="bottom|end"
-        android:backgroundTint="@color/colorPrimary"
         android:src="@drawable/ic_baseline_add_24" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

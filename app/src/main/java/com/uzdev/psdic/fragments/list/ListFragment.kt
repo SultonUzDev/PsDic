@@ -19,6 +19,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import com.uzdev.psdic.R
 import com.uzdev.psdic.adapter.ListAdapter
+import com.uzdev.psdic.databinding.FragmentAddBinding
+import com.uzdev.psdic.databinding.FragmentListBinding
+import com.uzdev.psdic.databinding.FragmentUpdateBinding
 import com.uzdev.psdic.model.Word
 import com.uzdev.psdic.viewmodel.WordViewModel
 import kotlinx.android.synthetic.main.fragment_list.view.*
@@ -29,27 +32,31 @@ class ListFragment : Fragment() {
     private lateinit var listAdapter: ListAdapter
     private lateinit var allData: List<Word>
 
+    private var _binding: FragmentListBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
-        val view = inflater.inflate(R.layout.fragment_list, container, false)
+        _binding = FragmentListBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
         listAdapter = ListAdapter()
-        val recyclerView = view.recyclerViewList
+        val recyclerView = binding.recyclerViewList
         recyclerView.adapter = listAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
-
         val divider = DividerItemDecoration(requireActivity(), DividerItemDecoration.VERTICAL)
-
         recyclerView.addItemDecoration(divider)
-
-
         mWordViewModel = ViewModelProvider(this).get(WordViewModel::class.java)
         mWordViewModel.readAllData.observe(viewLifecycleOwner, Observer { words ->
             allData = words
-
-
             listAdapter.setData(words)
         })
 
@@ -62,23 +69,21 @@ class ListFragment : Fragment() {
         view.floatingActionButton.setOnClickListener {
             findNavController().navigate(R.id.action_listFragment_to_addFragment)
         }
-
-
         setHasOptionsMenu(true);
-        return view
+
     }
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        val onBackPressedCallback = object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                requireActivity().finish()
-            }
-        }
-        requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
-    }
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//        val onBackPressedCallback = object : OnBackPressedCallback(true) {
+//            override fun handleOnBackPressed() {
+//                requireActivity().finish()
+//            }
+//        }
+//        requireActivity().onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+//    }
 
     private fun deleteWordFromDatabase(data: Word) {
         val delete = "Do you want to delete the word "

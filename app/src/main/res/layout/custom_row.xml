@@ -5,7 +5,6 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-
     android:background="?selectableItemBackground">
 
     <LinearLayout
@@ -14,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:orientation="vertical"
-        android:padding="2dp"
+        android:padding="4dp"
         android:weightSum="2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/buttonSpeak"
@@ -23,18 +22,15 @@
 
 
         <TextView
-
             android:id="@+id/eng_words"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="arial"
             android:gravity="center_vertical"
-            android:paddingStart="8dp"
-            android:text="ss"
+            tools:text="ss"
             android:textColor="#000"
-            android:textSize="20sp"
-
+            android:textSize="16sp"
             app:fontFamily="@font/tahoma" />
 
         <TextView
@@ -44,10 +40,9 @@
             android:layout_weight="1"
             android:fontFamily="@font/corbel"
             android:gravity="center_vertical"
-            android:paddingStart="8dp"
-            android:text="ss"
-            android:textColor="#201919"
-            android:textSize="20sp"
+            tools:text="ss"
+            android:textColor="#114e60"
+            android:textSize="16sp"
 
             app:fontFamily="@font/corbel" />
 
@@ -55,7 +50,7 @@
     </LinearLayout>
 
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/buttonSpeak"
         android:layout_width="56dp"
         android:layout_height="56dp"
@@ -63,8 +58,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp"
         android:background="?selectableItemBackground"
-
-        android:src="@drawable/ic_volume_up_black_24dp"
+        app:srcCompat="@drawable/ic_volume_up_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
