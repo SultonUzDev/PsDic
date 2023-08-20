@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_layout"
@@ -8,17 +8,16 @@
     android:background="?selectableItemBackground">
 
     <LinearLayout
-        android:id="@+id/roootLayout"
-        android:layout_width="0dp"
+        android:id="@+id/rootLayout"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_centerVertical="true"
         android:layout_marginStart="8dp"
+        android:layout_toStartOf="@+id/buttonSpeak"
         android:orientation="vertical"
         android:padding="4dp"
-        android:weightSum="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSpeak"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:weightSum="2">
 
 
         <TextView
@@ -26,12 +25,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:fontFamily="arial"
             android:gravity="center_vertical"
-            tools:text="ss"
-            android:textColor="#000"
-            android:textSize="16sp"
-            app:fontFamily="@font/tahoma" />
+            android:textColor="#2B2730"
+            app:fontFamily="@font/tahoma"
+
+            tools:text="ss" />
 
         <TextView
             android:id="@+id/uzb_words"
@@ -40,11 +38,8 @@
             android:layout_weight="1"
             android:fontFamily="@font/corbel"
             android:gravity="center_vertical"
-            tools:text="ss"
-            android:textColor="#114e60"
-            android:textSize="16sp"
-
-            app:fontFamily="@font/corbel" />
+            android:textColor="#445069"
+            tools:text="ss" />
 
 
     </LinearLayout>
@@ -54,14 +49,13 @@
         android:id="@+id/buttonSpeak"
         android:layout_width="56dp"
         android:layout_height="56dp"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp"
         android:background="?selectableItemBackground"
-        app:srcCompat="@drawable/ic_volume_up_black_24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:srcCompat="@drawable/ic_volume_up_black_24dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

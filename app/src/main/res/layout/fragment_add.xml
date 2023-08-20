@@ -1,64 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:fillViewport="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".fragments.add.AddFragment">
-
-<LinearLayout
-    android:background="#eeebdd"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="8dp"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/engName_at"
+    tools:context=".presentation.fragments.add.AddFragment">
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_eng_name"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="16dp"
-        android:clickable="true"
-        android:focusableInTouchMode="true"
+        android:layout_margin="8dp"
         android:background="@drawable/edittext_style_back"
+        android:focusableInTouchMode="true"
         android:hint="English"
-        android:inputType="textPersonName"
-        android:paddingStart="8dp" />
+        android:inputType="text"
+        android:paddingStart="8dp"
+        tools:ignore="RtlSymmetry" />
 
-    <EditText
-        android:id="@+id/uzbName_at"
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/et_uzb_name"
         android:layout_width="match_parent"
         android:layout_height="56dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
+        android:layout_margin="8dp"
         android:background="@drawable/edittext_style_back"
-        android:hint="O'zbekcha"
-        android:clickable="true"
         android:focusableInTouchMode="true"
-        android:inputType="textPersonName"
+        android:hint="O'zbekcha"
+        android:inputType="text"
         android:paddingStart="8dp" />
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/add_btn_at"
+        android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="64dp"
-        android:layout_marginStart="56dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="56dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="#02475e"
-        android:text="Add word"
+        android:text="Add"
         android:textColor="#fff"
-        app:cornerRadius="4dp"
+        app:cornerRadius="8dp"
         app:elevation="3dp" />
+
+
 </LinearLayout>
-
-
-
-</androidx.core.widget.NestedScrollView>

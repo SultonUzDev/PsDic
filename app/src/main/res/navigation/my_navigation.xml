@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.uzdev.psdic.fragments.list.ListFragment"
+        android:name="com.uzdev.psdic.presentation.fragments.list.ListFragment"
         android:label="  Your personal dictionary"
         tools:layout="@layout/fragment_list" >
         <action
@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.uzdev.psdic.fragments.add.AddFragment"
+        android:name="com.uzdev.psdic.presentation.fragments.add.AddFragment"
         android:label="Add a word to the dictionary"
         tools:layout="@layout/fragment_add" >
         <action
@@ -30,14 +30,14 @@
 
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.uzdev.psdic.fragments.update.UpdateFragment"
+        android:name="com.uzdev.psdic.presentation.fragments.update.UpdateFragment"
         android:label="Edit the word from the dictionary"
         tools:layout="@layout/fragment_update">
         <action
             android:id="@+id/action_updateFragment_to_listFragment"
             app:destination="@id/listFragment" />
         <argument
-            android:name="currentWord"
-            app:argType="com.uzdev.psdic.model.Word" />
+            android:name="id"
+            app:argType="integer" />
     </fragment>
 </navigation>

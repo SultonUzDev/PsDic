@@ -2,7 +2,7 @@ package com.uzdev.psdic.data
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.uzdev.psdic.model.Word
+import com.uzdev.psdic.domain.model.Word
 
 @Dao
 interface WordDao {
@@ -16,15 +16,17 @@ interface WordDao {
     @Delete
     suspend fun deleteWord(word: Word)
 
-    @Query("SELECT * FROM word_table ORDER BY id ASC")
+    @Query("SELECT * FROM words ORDER BY id ASC")
     fun readAllData(): LiveData<List<Word>>
 
 
-    @Query("DELETE FROM word_table")
+    @Query("DELETE FROM words")
     fun clearAllData()
 
-    @Query("SELECT * FROM word_table  WHERE engName LIKE :query")
-    fun searchDatabase(query: String): LiveData<List<Word>>
+    @Query("SELECT * FROM words  WHERE engName LIKE :query")
+    fun searchWord(query: String): LiveData<List<Word>>
 
+    @Query("SELECT * FROM words WHERE id LIKE :id")
+    fun findWordById(id: Int): Word
 
 }
