@@ -1,4 +1,4 @@
-package com.uzdev.psdic.data
+package com.uzdev.psdic.data.db
 
 import android.content.Context
 import androidx.room.Database

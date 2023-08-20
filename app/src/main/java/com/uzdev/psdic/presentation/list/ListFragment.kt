@@ -1,4 +1,4 @@
-package com.uzdev.psdic.presentation.fragments.list
+package com.uzdev.psdic.presentation.list
 
 import android.annotation.SuppressLint
 import android.graphics.Color
@@ -26,7 +26,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.uzdev.psdic.R
 import com.uzdev.psdic.databinding.FragmentListBinding
 import com.uzdev.psdic.domain.model.Word
-import com.uzdev.psdic.presentation.adapter.ListAdapter
+import com.uzdev.psdic.presentation.list.adapter.ListAdapter
 import com.uzdev.psdic.presentation.viewmodel.WordViewModel
 
 
@@ -56,6 +56,7 @@ class ListFragment : Fragment() {
 
         setUpRecyclerView()
         initialize()
+        setHasOptionsMenu(true)
 
 
 
@@ -116,15 +117,15 @@ class ListFragment : Fragment() {
         builder.setCancelable(false)
         builder.setMessage(spannableBuilder)
 
-        val dialog = builder.create()
 
         builder.setPositiveButton("Yes") { _, _ ->
             mWordViewModel.deleteWord(data)
             listAdapter.notifyDataSetChanged()
         }
         builder.setNegativeButton("No") { _, _ ->
-            dialog.dismiss()
         }
+        val dialog = builder.create()
+
         dialog.show()
 
     }
@@ -172,14 +173,14 @@ class ListFragment : Fragment() {
             builder.setCancelable(false)
             builder.setMessage(" Are you sure you want to delete all the words ?")
             builder.setIcon(R.drawable.ic_baseline_warning_24)
-            val dialog = builder.create()
 
             builder.setPositiveButton("OK") { _, _ ->
                 mWordViewModel.clearAllWord()
             }
             builder.setNegativeButton("Cancel") { _, _ ->
-                dialog.dismiss()
             }
+            val dialog = builder.create()
+
             dialog.show()
 
         } else {

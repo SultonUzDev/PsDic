@@ -1,4 +1,4 @@
-package com.uzdev.psdic.data
+package com.uzdev.psdic.data.db
 
 import androidx.lifecycle.LiveData
 import androidx.room.*

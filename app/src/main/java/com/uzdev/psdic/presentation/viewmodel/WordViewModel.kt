@@ -5,7 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
-import com.uzdev.psdic.data.WordDatabase
+import com.uzdev.psdic.data.db.WordDatabase
 import com.uzdev.psdic.domain.model.Word
 import com.uzdev.psdic.domain.repository.WordRepository
 import kotlinx.coroutines.Dispatchers

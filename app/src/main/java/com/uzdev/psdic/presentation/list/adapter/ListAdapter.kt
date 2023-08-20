@@ -1,4 +1,4 @@
-package com.uzdev.psdic.presentation.adapter
+package com.uzdev.psdic.presentation.list.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.uzdev.psdic.R
 import com.uzdev.psdic.databinding.CustomRowBinding
 import com.uzdev.psdic.domain.model.Word
-import com.uzdev.psdic.presentation.fragments.list.ListFragmentDirections
+import com.uzdev.psdic.presentation.list.ListFragmentDirections
 import java.util.*
 
 class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {

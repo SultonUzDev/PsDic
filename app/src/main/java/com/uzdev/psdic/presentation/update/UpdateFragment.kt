@@ -1,4 +1,4 @@
-package com.uzdev.psdic.presentation.fragments.update
+package com.uzdev.psdic.presentation.update
 
 
 import android.content.Context

@@ -2,14 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/my_navigation"
-    app:startDestination="@id/listFragment">
+    android:id="@+id/my_navigation">
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.uzdev.psdic.presentation.fragments.list.ListFragment"
+        android:name="com.uzdev.psdic.presentation.list.ListFragment"
         android:label="  Your personal dictionary"
-        tools:layout="@layout/fragment_list" >
+        tools:layout="@layout/fragment_list">
         <action
             android:id="@+id/action_listFragment_to_addFragment"
             app:destination="@id/addFragment" />
@@ -19,9 +18,9 @@
     </fragment>
     <fragment
         android:id="@+id/addFragment"
-        android:name="com.uzdev.psdic.presentation.fragments.add.AddFragment"
+        android:name="com.uzdev.psdic.presentation.add.AddFragment"
         android:label="Add a word to the dictionary"
-        tools:layout="@layout/fragment_add" >
+        tools:layout="@layout/fragment_add">
         <action
             android:id="@+id/action_addFragment_to_listFragment"
             app:destination="@id/listFragment" />
@@ -30,7 +29,7 @@
 
     <fragment
         android:id="@+id/updateFragment"
-        android:name="com.uzdev.psdic.presentation.fragments.update.UpdateFragment"
+        android:name="com.uzdev.psdic.presentation.update.UpdateFragment"
         android:label="Edit the word from the dictionary"
         tools:layout="@layout/fragment_update">
         <action
@@ -39,5 +38,14 @@
         <argument
             android:name="id"
             app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.uzdev.psdic.presentation.onboard.OnBoardingFragment"
+        android:label="Introduction"
+        tools:layout="@layout/fragment_on_boarding">
+        <action
+            android:id="@+id/action_onBoardingFragment_to_listFragment"
+            app:destination="@id/listFragment" />
     </fragment>
 </navigation>

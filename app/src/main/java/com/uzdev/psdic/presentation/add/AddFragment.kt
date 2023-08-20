@@ -1,4 +1,4 @@
-package com.uzdev.psdic.presentation.fragments.add
+package com.uzdev.psdic.presentation.add
 
 import android.content.Context
 import android.os.Bundle
@@ -44,13 +44,13 @@ class AddFragment : Fragment() {
         with(binding) {
 
             val enWord = etEngName.text.toString()
-            val uzWord = etUzbName.text.toString()
+            val uzWord = etYourLang.text.toString()
 
             if (enWord.isEmpty() || uzWord.isEmpty()) {
                 if (enWord.isEmpty()) {
-                    etEngName.error = "Fill fields please"
+                    etEngName.error = getString(R.string.fill_fields_please)
                 } else {
-                    etUzbName.error = "Bu maydonni to'ldiring"
+                    etYourLang.error = getString(R.string.fill_fields_please_in_your_lang)
                 }
 
             } else {

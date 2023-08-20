@@ -1,7 +1,7 @@
 package com.uzdev.psdic.domain.repository
 
 import androidx.lifecycle.LiveData
-import com.uzdev.psdic.data.WordDao
+import com.uzdev.psdic.data.db.WordDao
 import com.uzdev.psdic.domain.model.Word
 
 class WordRepository(private val wordDao: WordDao) {

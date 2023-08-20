@@ -7,7 +7,7 @@
     android:gravity="center"
     android:orientation="vertical"
     android:padding="8dp"
-    tools:context=".presentation.fragments.add.AddFragment">
+    tools:context=".presentation.add.AddFragment">
 
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -17,7 +17,7 @@
         android:layout_margin="8dp"
         android:background="@drawable/edittext_style_back"
         android:focusableInTouchMode="true"
-        android:hint="English"
+        android:hint="@string/english"
         android:inputType="text"
         android:paddingStart="8dp"
         tools:ignore="RtlSymmetry" />
@@ -29,7 +29,7 @@
         android:layout_margin="8dp"
         android:background="@drawable/edittext_style_back"
         android:focusableInTouchMode="true"
-        android:hint="O'zbekcha"
+        android:hint="@string/your_lang"
         android:inputType="text"
         android:paddingStart="8dp" />
 

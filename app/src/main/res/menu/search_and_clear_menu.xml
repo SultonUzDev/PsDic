@@ -10,13 +10,12 @@
         app:showAsAction="always|collapseActionView" />
 
 
-
-            <item
-                android:id="@+id/delete_all_word_menu"
-                android:icon="@drawable/clear_all_data"
-                android:orderInCategory="100"
-                android:title="Delete all words"
-                app:showAsAction="always" />
+    <item
+        android:id="@+id/delete_all_word_menu"
+        android:icon="@drawable/clear_all_data"
+        android:orderInCategory="100"
+        android:title="Clear"
+        app:showAsAction="always" />
 
 
 </menu>
