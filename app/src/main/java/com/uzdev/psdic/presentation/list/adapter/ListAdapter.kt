@@ -106,9 +106,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
                 }
             }
-//        else {
-//           // Log.e("TTS", "Initilization Failed!")
-//        }
+
         }
     }
 

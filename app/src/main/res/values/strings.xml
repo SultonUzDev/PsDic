@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">PsDic</string>
-    <string name="your_lang">O\'zbekcha</string>
+    <string name="your_lang">The translation of the word in your language</string>
     <string name="english">English</string>
     <string name="fill_fields_please">Fill fields please</string>
     <string name="fill_fields_please_in_your_lang">Fill fields please</string>
     <string name="introduction">Introduction</string>
     <string name="write_there_the_translation_of">Write the translation <b> Fill required</b> there"</string>
-    <string name="write_there_your_lang">Write the short name of your language there (<b> English,Uzbek</b>)"</string>
+    <string name="write_there_your_lang">Write the short name of your language there (<b> English,Uzbek...</b>)"</string>
     <string name="desc">It is designed to learn English words based on your own language. Therefore, you need to create a suitable program for yourself.So fill in the fields below. The default languages of the application are English and Uzbek.</string>
 </resources>

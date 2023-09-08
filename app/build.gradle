@@ -9,7 +9,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId "com.uzdev.psdic"
+        applicationId "com.sultonuzdev.psdic"
         minSdkVersion 21
         targetSdkVersion 33
         versionCode 3
@@ -20,7 +20,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -64,9 +64,7 @@ dependencies {
     implementation "androidx.room:room-runtime:2.2.6"
     kapt "androidx.room:room-compiler:2.2.6"
     implementation "androidx.room:room-ktx:2.2.6"
-    //Preferences
-    implementation "androidx.preference:preference-ktx:1.1.0"
-
+    
     //lifecycle components
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
 

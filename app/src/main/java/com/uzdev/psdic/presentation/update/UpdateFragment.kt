@@ -64,8 +64,6 @@ class UpdateFragment : Fragment() {
 
 
         with(binding) {
-
-
             btnEdit.setOnClickListener {
                 updateItem(id)
             }

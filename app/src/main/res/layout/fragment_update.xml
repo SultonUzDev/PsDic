@@ -28,6 +28,7 @@
         android:layout_height="56dp"
         android:layout_margin="8dp"
         android:background="@drawable/edittext_style_back"
+        android:ellipsize="end"
         android:focusableInTouchMode="true"
         android:hint="@string/your_lang"
         android:inputType="text"
