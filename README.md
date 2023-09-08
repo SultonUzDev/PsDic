@@ -1,6 +1,6 @@
 # PsDic
 
-- My first project on Google Play
+- With the app you can collect and learn English words and their translation in your language anywhere
 
 # Images
 
