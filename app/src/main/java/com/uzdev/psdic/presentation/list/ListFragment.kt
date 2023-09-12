@@ -172,7 +172,7 @@ class ListFragment : Fragment() {
             builder.setTitle(" Do you want to delete all words ")
             builder.setCancelable(false)
             builder.setMessage(" Are you sure you want to delete all the words ?")
-            builder.setIcon(R.drawable.ic_baseline_warning_24)
+            builder.setIcon(R.drawable.ic_round_warning_24)
 
             builder.setPositiveButton("OK") { _, _ ->
                 mWordViewModel.clearAllWord()

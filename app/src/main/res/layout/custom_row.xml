@@ -55,7 +55,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="2dp"
         android:background="?selectableItemBackground"
-        app:srcCompat="@drawable/ic_volume_up_black_24dp" />
+        app:srcCompat="@drawable/ic_volume_3" />
 
 
 </RelativeLayout>
